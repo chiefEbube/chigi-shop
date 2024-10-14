@@ -30,9 +30,12 @@
                     <p class="hidden lg:flex">Account</p>
                 </NuxtLink>
 
-                <NuxtLink to="/cart" class="flex items-center gap-2">
-                    <img src="/assets/icons/Vector.svg" alt="">
-                    <p class="hidden lg:flex">Cart</p>
+                <NuxtLink to="/cart" class="relative">
+                    <div class="flex items-center gap-2">
+                        <img src="/assets/icons/Vector.svg" alt="">
+                        <p class="hidden lg:flex">Cart</p>
+                    </div>
+                    <span v-if="cartStore.itemCount > 0" class="absolute top-0 left-0 bg-red-500 rounded-full w-3 h-3 text-white text-[10px] text-center font-bold">{{ cartStore.itemCount }}</span>
                 </NuxtLink>
 
                 <div class="flex lg:hidden items-center gap-2">
@@ -50,5 +53,6 @@
 </template>
 
 <script setup lang="ts">
-
+import { useCartStore } from '~/stores/cart';
+const cartStore = useCartStore()
 </script>
