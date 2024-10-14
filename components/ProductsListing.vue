@@ -25,9 +25,9 @@ const props = defineProps<{
 }>();
 
 const categories: { [key: string]: string } = {
-    "Top picks": "jewelery",
-    "Best sellers": "men's clothing",
-    "New Arrivals": "women's clothing",
+    "Top picks": "men's clothing",
+    "Best sellers": "women's clothing",
+    "New Arrivals": "jewelery",
 };
 
 const category = categories[props.title] || "";
