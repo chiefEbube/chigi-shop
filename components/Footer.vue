@@ -11,7 +11,7 @@
                         <button  class="bg-[#2A54C7] p-2 lg:p-3 rounded-lg lg:w-32 font-medium">Subscribe</button>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-20 mt-20 lg:mt-0">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-20 mt-20 lg:mt-0">
                     <div>
                         <h5 class="font-bold">Categories</h5>
                         <ul>
