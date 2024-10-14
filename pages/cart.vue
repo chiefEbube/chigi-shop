@@ -9,7 +9,7 @@
                     <div class="w-full">
                         <div class="mb-10">
                             <div class="flex justify-between w-full">
-                                <p class="text-[#1E1F21]  text-base lg:text-lg">{{ item.title.slice(0, 25) }}</p>
+                                <p class="text-[#1E1F21]  text-base lg:text-lg">{{ item.title.slice(0, 15) }}</p>
                                 <p>$20</p>
                             </div>
                             <div class="flex justify-between w-full">
