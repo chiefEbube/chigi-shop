@@ -1,25 +1,21 @@
 <template>
     <div>
-        <header>
-            <nav>
-                <NuxtLink to="/">Logo</NuxtLink>
-                <ul>
-                    <li><NuxtLink to="/">Home</NuxtLink></li>
-                    <li><NuxtLink to="/cart">Cart</NuxtLink></li>
-                    <li><NuxtLink to="/products">Product</NuxtLink></li>
-                </ul>
-            </nav>
+        <header class="shadow-sm">
+            <Navbar />
         </header>
-
         <div>
-            <slot/>
+            <slot />
         </div>
+        <footer>
+            <Footer />
+        </footer>
     </div>
 </template>
 
 <script>
+import Footer from '~/components/Footer.vue';
+import Navbar from '~/components/Navbar.vue';
+
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
