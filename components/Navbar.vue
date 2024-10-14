@@ -25,15 +25,15 @@
                     <input type="text" placeholder="Search" class="outline-none" />
                 </div>
 
-                <div class="flex items-center gap-2">
+                <NuxtLink to="/" class="flex items-center gap-2">
                     <img src="/assets/icons/Icon.svg" alt="">
                     <p class="hidden lg:flex">Account</p>
-                </div>
+                </NuxtLink>
 
-                <div class="flex items-center gap-2">
+                <NuxtLink to="/cart" class="flex items-center gap-2">
                     <img src="/assets/icons/Vector.svg" alt="">
                     <p class="hidden lg:flex">Cart</p>
-                </div>
+                </NuxtLink>
 
                 <div class="flex lg:hidden items-center gap-2">
                     <img src="/assets/icons/menu.svg" alt="">
