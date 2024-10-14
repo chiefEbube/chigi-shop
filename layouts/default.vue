@@ -6,7 +6,7 @@
         <div>
             <slot />
         </div>
-        <footer>
+        <footer class="bg-[#1E1F21] text-[#F3F3F3] p-5 lg:p-20">
             <Footer />
         </footer>
     </div>
