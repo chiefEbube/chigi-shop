@@ -30,15 +30,17 @@
 <script lang="ts" setup>
 import { useCartStore } from '~/stores/cart';
 import type { Product } from '~/types/product';
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 
 const cartStore = useCartStore();
-
 const { id } = useRoute().params
 const uri = `https://fakestoreapi.com/products/${id}`
 const { data: product } = await useFetch<Product>(uri)
 
 const addToCart = (product: Product) => {
     cartStore.addToCart(product)
+    toast.success("Item added to cart successfully!")
 }
 </script>
 
