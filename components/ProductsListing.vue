@@ -31,6 +31,7 @@ const categories: { [key: string]: string } = {
 };
 
 const category = categories[props.title] || "";
-
-const { data: products } = await useFetch<Product[]>(`https://fakestoreapi.com/products/category/${category}`);
+const config = useRuntimeConfig()
+const baseUrl = config.public.apiUrl
+const { data: products } = await useFetch<Product[]>(`${baseUrl}/category/${category}`);
 </script>

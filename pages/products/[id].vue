@@ -35,7 +35,9 @@ import 'vue3-toastify/dist/index.css';
 
 const cartStore = useCartStore();
 const { id } = useRoute().params
-const uri = `https://fakestoreapi.com/products/${id}`
+const config = useRuntimeConfig()
+const baseUrl = config.public.apiUrl
+const uri = `${baseUrl}/${id}`
 const { data: product } = await useFetch<Product>(uri)
 
 const addToCart = (product: Product) => {
