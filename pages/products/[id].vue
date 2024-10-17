@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="container w-full lg:w-8/12 lg:h-[70vh] flex flex-col lg:flex-row items-center justify-center mx-auto gap-16 mt-10 px-4 lg:px-1">
+    <div class="container mx-auto">
+        <div class="w-full lg:w-8/12 lg:h-[70vh] flex flex-col lg:flex-row items-center justify-center mx-auto gap-16 mt-10 px-4 lg:px-1">
             <div class="lg:w-1/2 h-full">
                 <img :src="`${product?.image}`" alt="" class="w-full h-full object-contain">
             </div>
@@ -40,7 +40,9 @@ const { data: product } = await useFetch<Product>(uri)
 
 const addToCart = (product: Product) => {
     cartStore.addToCart(product)
-    toast.success("Item added to cart successfully!")
+    toast.success("Item added to cart successfully!", {
+        autoClose: 1000,
+    })
 }
 </script>
 

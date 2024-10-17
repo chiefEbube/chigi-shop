@@ -1,7 +1,7 @@
 <template>
-    <div class="my-12 lg:my-20 mx-4 lg:mx-16">
+    <div class="my-12 lg:my-20 mx-4 lg:mx-16 inter">
         <p class="border-l-[4px] border-[#2A54C7] pl-4 mb-6">{{ title }}</p>
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
             <div v-for="product in products?.slice(0, 3)" :key="product.id">
                 <NuxtLink :to="`/products/${product.id}`">
                     <div class="w-full h-[300px] overflow-hidden mx-auto">

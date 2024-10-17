@@ -2,7 +2,7 @@
     <nav class="container py-6 px-5 lg:px-10 mx-auto">
         <div class="flex justify-between items-center">
             <div class="flex lg:gap-3 xl:gap-8 items-center">
-                <NuxtLink to="/" class="text-2xl lg:text-3xl font-bold">Logo</NuxtLink>
+                <NuxtLink to="/" class="text-2xl lg:text-3xl font-bold inter">Logo</NuxtLink>
                 <ul class="hidden lg:flex gap-2">
                     <li>
                         <NuxtLink to="/" class="nav-link">Electronics</NuxtLink>

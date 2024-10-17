@@ -10,20 +10,20 @@
                         <div class="mb-10">
                             <div class="flex justify-between w-full">
                                 <p class="text-[#1E1F21]  text-base lg:text-lg">{{ item.title.slice(0, 15) }}</p>
-                                <p>$20</p>
+                                <p>${{ item.price }}</p>
                             </div>
                             <div class="flex justify-between w-full">
                                 <button @click="removeItem(item.id)" class="text-[#C33434] text-xs underline">Remove item</button>
-                                <span>$40</span>
+                                <span class="line-through text-[#787879]">${{ item.discount.toFixed(2) }}</span>
                             </div>
                         </div>
                         <div class="flex justify-between w-full">
                             <span class="text-sm">Qty:
-                                <button class="ml-2">-</button>
-                                <span class="px-4 py-1 border mx-2">1</span>
-                                <button>+</button>
+                                <button @click="decreaseQuantity(item)" class="ml-2">-</button>
+                                <span class="px-4 py-1 border mx-2">{{ item.qtyInCart }}</span>
+                                <button @click="increaseQuantity(item)">+</button>
                             </span>
-                            <span>$100</span>
+                            <span>${{ (item.discountedPrice * item.qtyInCart).toFixed(2) }}</span>
                         </div>
 
 
@@ -36,7 +36,7 @@
                 <div class="my-4">
                     <div class="flex justify-between text-sm text-[#4B4B4D]">
                         <span>Subtotal</span>
-                        <span>$40</span>
+                        <span>${{ cartStore.totalPrice.toFixed(2) }}</span>
                     </div>
                     <div class="flex justify-between text-sm text-[#4B4B4D] my-2">
                         <span>Shipping fee</span>
@@ -46,7 +46,7 @@
 
                 <div class="flex justify-between text-sm text-[#4B4B4D]">
                     <span>Total</span>
-                    <span>$40</span>
+                    <span>${{ (cartStore.totalPrice + 40).toFixed(2)}}</span>
                 </div>
                 <button class="btn my-4 p-2 w-full">Proceed to checkout</button>
             </div>
@@ -60,10 +60,23 @@
 
 <script lang="ts" setup>
 import { useCartStore } from '~/stores/cart';
+import type { CartItem } from '~/types/cartItem';
 
 const cartStore = useCartStore()
 
 const removeItem = (productId: number) => {
     cartStore.removeFromCart(productId)
 }
+
+const increaseQuantity = (item: CartItem) => {
+    item.qtyInCart += 1;
+};
+
+const decreaseQuantity = (item: CartItem) => {
+    if (item.qtyInCart > 1) {
+        item.qtyInCart -= 1;
+    } else {
+        removeItem(item.id);
+    }
+};
 </script>

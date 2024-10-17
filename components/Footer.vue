@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto">
         <div class="flex flex-col gap-10">
-            <div class="text-5xl font-bold">Logo</div>
+            <div class="text-5xl font-bold inter">Logo</div>
             <div class="flex flex-col lg:flex-row justify-between">
                 <div class="">
                     <h4 class="text-xl font-bold">New here?</h4>

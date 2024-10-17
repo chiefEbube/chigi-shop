@@ -2,11 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @layer components {
     .btn {
         @apply bg-[#2A54C7] px-6 py-3 rounded-xl text-[#fff] font-medium
     }
     .nav-link{
         @apply text-[#4B4B4D] font-bold
+    }
+
+    .inter{
+        font-family: "Inter", sans-serif;
     }
 }
